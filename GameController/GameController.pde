@@ -8,8 +8,7 @@ ArrayList<Sprite> enemies = new ArrayList<Sprite>();
 ShapeFactory factory;
 HostileSprite player;
 
-PShape enemy;
-PShape player1;
+
 
 
 void setup() {
@@ -17,16 +16,14 @@ void setup() {
   factory = new ShapeFactory();
   player = spawnPlayer();
   sprites.add(player);
-  enemy = factory.getBasicEnemy();
-  player1 = factory.getBasicPlayer();
+ 
+  
   noCursor();
 }
 
 
 void draw() {
   background(255);
-  shape(player1, mouseX, mouseY);
-  shape(enemy, 100, 100);
   for(int i = 0; i < sprites.size(); i++) {
     sprites.get(i).updateAndDisplay();
   }
